@@ -12,7 +12,7 @@ import { FundMe, MockV3Aggregator } from "../../typechain-types"
       let deployer: SignerWithAddress
       let user: SignerWithAddress
 
-      const ETHER_AMOUNT = 1
+      const ETHER_AMOUNT = 0.00405186385
       const sendAmount = ethers.utils.parseEther(ETHER_AMOUNT.toString())
 
       beforeEach(async function () {
@@ -168,7 +168,7 @@ import { FundMe, MockV3Aggregator } from "../../typechain-types"
       describe("getCurrentPrice", async function () {
         it(`should return the current price of ETH`, async function () {
           const price = await fundMe.getCurrentPrice()
-          expect(price.toString()).to.equal(INITIAL_ANSWER.toString())
+          expect(price.toString()).to.equal(INITIAL_ANSWER + "0000000000")
         })
       })
 
